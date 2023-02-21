@@ -1,18 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AareonTechnicalTest.Models
 {
-    public class Ticket
+    public class Ticket : BaseModel
     {
+        public Ticket()
+        {
+
+        }
         [Key]
         public int Id { get; }
 
         public string Content { get; set; }
 
-        public int PersonId { get; set; }
-
-        public int NoteId { get; set; }
         public List<Note> Notes { get; set; }
     }
 }

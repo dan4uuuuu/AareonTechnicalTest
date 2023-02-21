@@ -1,13 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace AareonTechnicalTest.Models
 {
-    public class Person
+    public class Person : IdentityUser
     {
-        [Key]
-        public int Id { get; }
-
-        public string Forename { get; set; }
+        public string FirstName { get; set; }
 
         public string Surname { get; set; }
 

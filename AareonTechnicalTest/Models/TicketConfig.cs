@@ -16,9 +16,6 @@ namespace AareonTechnicalTest.Models
                 entity =>
                 {
                     entity.HasKey(e => e.Id);
-                    entity.HasOne(t => t.Ticket)
-                        .WithMany(t => t.Notes)
-                        .HasForeignKey(t => t.TicketId);
                 });
         }
     }

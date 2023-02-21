@@ -3,14 +3,16 @@ using System;
 using AareonTechnicalTest;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AareonTechnicalTest.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230221094955_AddCreatedBy_Notes")]
+    partial class AddCreatedBy_Notes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,20 +30,8 @@ namespace AareonTechnicalTest.Migrations
                     b.Property<Guid>("CreatedBy")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("IsSuspended")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("TicketId")
                         .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("UpdatedBy")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -132,17 +122,11 @@ namespace AareonTechnicalTest.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CreatedBy")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("NoteId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("UpdatedBy")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("PersonId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

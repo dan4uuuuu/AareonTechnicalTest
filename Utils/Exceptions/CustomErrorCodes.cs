@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Utils.Exceptions
@@ -15,5 +16,15 @@ namespace Utils.Exceptions
         public const string INSUFFICIENT_RIGHTS = nameof(INSUFFICIENT_RIGHTS);
         public const string INSUFFICIENT_FUNDS = nameof(INSUFFICIENT_FUNDS);
         public const string USER_NOT_FOUND = nameof(USER_NOT_FOUND);
+
+
+        public static string ToJson(this object obj)
+        {
+            return JsonSerializer.Serialize(obj, new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+        }
     }
 }
