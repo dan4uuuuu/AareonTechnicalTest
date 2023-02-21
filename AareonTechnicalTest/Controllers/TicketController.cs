@@ -1,5 +1,4 @@
 ﻿using AareonTechnicalTest.Controllers.Utils;
-using AareonTechnicalTest.CustomAttributes;
 using AareonTechnicalTest.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
